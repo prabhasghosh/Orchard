@@ -18,7 +18,7 @@ spec:
           image: postgres:14
           env:
             - name: POSTGRES_DB
-              value: orcharddb
+              value: postgres
             - name: POSTGRES_USER
               value: orcharduser
             - name: POSTGRES_PASSWORD
