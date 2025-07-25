@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orchard-cms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orchard-cms
+  template:
+    metadata:
+      labels:
+        app: orchard-cms
+    spec:
+      containers:
+        - name: orchard-cms
+          image: orchard-cms:v1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
